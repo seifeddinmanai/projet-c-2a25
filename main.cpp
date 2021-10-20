@@ -2,7 +2,7 @@
 #include <string>
 
 using namespace std ;
-
+class Formations{};
 int main()
 {
     cout <<"hello world!"<<endl ;
