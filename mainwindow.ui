@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>966</width>
+    <height>646</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>921</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Formation</string>
+     </attribute>
+     <widget class="QPushButton" name="button_ajouter_formation">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>122</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ajouter Formation</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_afficher_formation">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Afficher Formation</string>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget_formation">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>30</y>
+        <width>751</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QStackedWidget{
+background:qlineargradient(spread:pad, x1:0.443, y1:0, x2:0.497, y2:1, stop:0 rgba(223, 230, 220, 255), stop:1 rgba(226, 226, 226, 255));
+
+}
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_ajouter_formation">
+       <widget class="QLabel" name="label_type_formation">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>140</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Type de formation :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_prix_formation">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>170</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Prix de formation :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_duree_formation">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>200</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Durée de formation :</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ajouter_formation">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>340</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_type">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>140</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_prix">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>170</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>Dt</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_duree">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>200</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>Heure</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_formateur">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>230</y>
+          <width>151</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Formateur :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_niveau">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>280</y>
+          <width>181</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Niveau d'etude de formation :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_formateur">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>230</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_niveau">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>280</y>
+          <width>111</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <item>
+         <property name="text">
+          <string>BTP</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BTS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bac</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>70</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">*{
+color:white;
+font-size:26px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Ajouter formation</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_afficher_formation">
+       <widget class="QTableView" name="tab_formation">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>711</width>
+          <height>391</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_Rechercher_formation">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string>Rechercher</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_Trier_par">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>20</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Trier par :</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_Duree">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>20</y>
+          <width>70</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Duree</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_Formateur">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>20</y>
+          <width>91</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Formateur</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_Prix">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>20</y>
+          <width>70</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Prix</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Trier">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>12</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Trier</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_modifier_supprimer">
+       <widget class="QPushButton" name="pushButton_modifier_formation">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>410</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_supprimer_formation">
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>410</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_id_formation_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>90</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ID Formation :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_type_formation_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>130</y>
+          <width>151</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Type de formation :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_prix_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>170</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Prix de formation :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_duree_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>210</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Durée de formation :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_formateur_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>250</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Formateur :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_id_formation">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>90</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_type_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>130</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_Prix_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>170</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_Duree_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>210</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_formateur_modifier">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>250</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_niveau_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>300</y>
+          <width>191</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Niveau d'etude de formation :</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_formation_modifier">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>300</y>
+          <width>111</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>BTP</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>BTS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bac</string>
+         </property>
+        </item>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>966</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
