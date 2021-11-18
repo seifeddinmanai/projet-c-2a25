@@ -1,4 +1,5 @@
-QT       += core gui sql
+QT       += core gui sql charts
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -10,12 +11,14 @@ CONFIG += c++11
 SOURCES += \
     connection.cpp \
     formations.cpp \
+    histrorique.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     connection.h \
     formations.h \
+    histrorique.h \
     mainwindow.h
 
 FORMS += \
@@ -25,3 +28,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc

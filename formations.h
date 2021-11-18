@@ -1,9 +1,8 @@
 #ifndef FORMATIONS_H
 #define FORMATIONS_H
-#include <QString>
-#include <QSqlQuery>
-#include <QSqlQueryModel>
+
 #include <connection.h>
+#include "histrorique.h"
 
 class formations
 {
@@ -21,8 +20,18 @@ public:
     QSqlQueryModel * afficherFormation(int);
     bool supprimerFormation(int);
     bool modifierFormation(QString);
+    QSqlQueryModel * rechercher_formation(QString);
+
+    int Get_somme_bac();
+    int Get_somme_btp();
+    int Get_somme_bts();
+
+
 private:
     QString type,prix,duree,formateur,niveau;
+
+
+
 };
 
 #endif // FORMATIONS_H

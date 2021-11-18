@@ -13,7 +13,7 @@ bool connection::ouvrirconnexion()
     db.setPassword("amine");//mot de passe utilisateur
     if(db.open())
         test=true;
-   // else throw QString ("Erreur Paramétres"+test);
+    else throw QString ("Erreur Paramétres"+test);
 
 
 
