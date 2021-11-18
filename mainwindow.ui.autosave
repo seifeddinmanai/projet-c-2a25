@@ -115,8 +115,8 @@
        <widget class="QPushButton" name="pushButton_trier">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>270</y>
+          <x>130</x>
+          <y>280</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -210,8 +210,8 @@
        <widget class="QPushButton" name="pushButton_chercher">
         <property name="geometry">
          <rect>
-          <x>200</x>
-          <y>230</y>
+          <x>350</x>
+          <y>240</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -266,8 +266,8 @@
        <widget class="QPushButton" name="pushButton_statistique">
         <property name="geometry">
          <rect>
-          <x>470</x>
-          <y>270</y>
+          <x>570</x>
+          <y>280</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -341,8 +341,8 @@
        <widget class="QPushButton" name="pushButton_Reset">
         <property name="geometry">
          <rect>
-          <x>330</x>
-          <y>270</y>
+          <x>460</x>
+          <y>280</y>
           <width>93</width>
           <height>28</height>
          </rect>
@@ -377,11 +377,24 @@
        <widget class="QLineEdit" name="lineEdit">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>270</y>
+          <x>330</x>
+          <y>290</y>
           <width>113</width>
           <height>22</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>280</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>trier</string>
         </property>
        </widget>
       </widget>

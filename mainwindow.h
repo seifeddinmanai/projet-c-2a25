@@ -42,6 +42,8 @@ private slots:
 
     void on_pushButton_statistique_clicked();
 
+    void on_lineEdit_textEdited(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     employe E;

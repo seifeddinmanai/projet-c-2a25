@@ -110,10 +110,9 @@ bool employe::modifierEmploye(int cin,QString nom,QString prenom,int age,QString
     query.bindValue(":nom", nom);
     query.bindValue(":prenom",prenom);
     query.bindValue(":age",age);
-    query.bindValue(":post", post);
-    query.bindValue(":experience",experience);
     query.bindValue(":email",email);
-
+    query.bindValue(":post", post);
+query.bindValue(":experience",experience);
 
 
  return query.exec();
@@ -154,29 +153,6 @@ QSqlQueryModel* employe::rechercheEmploye(int cin)
 return model;
 
 }
-/*
-void employe::statistique(QVector<double>* ticks,QVector<QString> *labels)
-{   QSqlQuery q;
-    int i=0;
-    q.exec("select matricule from employe");
-    while (q.next()) {
-        QString refer = q.value(0).toString();
-        i++;
-        *ticks<<i;
-        *labels <<refer;
-}}*/
-/*
-QSqlQueryModel * Client::enregistrer()
-{
-    QSqlQueryModel * Modal=new  QSqlQueryModel();
-
-    QSqlQuery qry;
-     qry.prepare("SELECT * FROM Clients");
-     qry.exec();
-     Modal->setQuery(qry);
-     return Modal;
-}
-*/
 
     bool employe::supprimertout()
     {
@@ -184,4 +160,21 @@ QSqlQueryModel * Client::enregistrer()
         query.prepare("delete from EMPLOYE");
         return query.exec();
 
+    }
+
+
+    QSqlQueryModel *employe::recherche3(QString a)
+    {
+        QSqlQueryModel *model=new QSqlQueryModel();
+        model->setQuery("SELECT * FROM EMPLOYE WHERE (CIN LIKE '%"+a+"%' OR NOM LIKE '%"+a+"%' OR PRENOM LIKE '%"+a+"%' OR AGE LIKE '%"+a+"%' OR EMAIL LIKE '%"+a+"%' OR POST LIKE '%"+a+"% OR EXPERIENCE LIKE '%"+a+"%' ) ");
+        model->setHeaderData(0,Qt::Horizontal,QObject::tr("cin"));
+        model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+        model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+        model->setHeaderData(3,Qt::Horizontal,QObject::tr("age"));
+        model->setHeaderData(4,Qt::Horizontal,QObject::tr("email"));
+          model->setHeaderData(4,Qt::Horizontal,QObject::tr("post"));
+          model->setHeaderData(4,Qt::Horizontal,QObject::tr("experience"));
+
+
+        return model;
     }

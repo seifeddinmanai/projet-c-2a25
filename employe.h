@@ -39,12 +39,13 @@ public:
         bool modifierEmploye(int ,QString ,QString ,int,QString ,QString ,QString );
         void  chercherEmploye(employe E);
         void trierEmploye( employe E);
-       // void statistique(QVector<double>* ticks,QVector<QString> *labels);
+
 
         employe(int,QString,QString,int,QString,QString,QString);
 
         QSqlQueryModel* trierEmploye();
         QSqlQueryModel* rechercheEmploye(int);
+        QSqlQueryModel* recherche3(QString a);
 
 
     private:

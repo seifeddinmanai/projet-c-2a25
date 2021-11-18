@@ -15,6 +15,8 @@
 #include <QtCharts/QPieSlice>
 #include <QtCharts>
 
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -122,80 +124,72 @@ void MainWindow::on_pushButton_trier_clicked()
 }
 
 
-void MainWindow::on_pushButton_chercher_clicked()
-{
 
-    E.setcin(ui->lineEdit_cin->text().toInt());
-    ui->tableView->setModel(E.rechercheEmploye(E.get_cin()));
-    ui->lineEdit_cin->clear();
-    ui->lineEdit_nom->clear();
-    ui->label_prenom->clear();
-    ui->lineEdit_age->clear();
-    ui->lineEdit_post->clear();
-    ui->lineEdit_email->clear();
-    ui->label_experience->clear();
 
-}
-/*
+
 
 void MainWindow::on_pushButton_statistique_clicked()
 {
+
+
     //ui->stackedWidget_2->setCurrentIndex(1);
-         QSqlQueryModel * model= new QSqlQueryModel();
-         model->setQuery("select * from GS_PRODUITS where PRIX < 50 ");
-         float salaire=model->rowCount();
-         model->setQuery("select * from GS_PRODUITS where PRIX  between 50 and 200 ");
-         float salairee=model->rowCount();
-         model->setQuery("select * from GS_PRODUITS where PRIX > 200 ");
-         float salaireee=model->rowCount();
-         float total=salaire+salairee+salaireee;
+        QSqlQueryModel * model= new QSqlQueryModel();
+        model->setQuery("select * from EMPLOYE where AGE < 18 ");
+        float age1=model->rowCount();
+        model->setQuery("select * from EMPLOYE where AGE  between 18 and 50 ");
+        float age2=model->rowCount();
+        model->setQuery("select * from EMPLOYE where AGE >50  ");
+        float age3=model->rowCount();
+        float total=age1+age2+age3;
 
-         QString a=QString("moins de 50 DT . "+QString::number((salaire*100)/total,'f',2)+"%" );
-         QString b=QString("entre 50 et 200 DT.  "+QString::number((salairee*100)/total,'f',2)+"%" );
-         QString c=QString("plus de 200 DT."+QString::number((salaireee*100)/total,'f',2)+"%" );
+        QString a=QString("moins de 50 ANS . "+QString::number((age1*100)/total,'f',2)+"%" );
+        QString b=QString("entre 18 et 50 ANS.  "+QString::number((age2*100)/total,'f',2)+"%" );
+        QString c=QString("plus de 50 ANS."+QString::number((age3*100)/total,'f',2)+"%" );
 
-         QPieSeries *series = new QPieSeries();
-         series->append(a,salaire);
-         series->append(b,salairee);
-         series->append(c,salaireee);
-         if (salaire!=0)
-         {QPieSlice *slice = series->slices().at(0);
-             slice->setLabelVisible();
-             slice->setPen(QPen());}
-         if ( salairee!=0)
-         {
-             // Add label, explode and define brush for 2nd slice
-             QPieSlice *slice1 = series->slices().at(1);
-             //slice1->setExploded();
-             slice1->setLabelVisible();
-         }
-         if(salaireee!=0)
-         {
-             // Add labels to rest of slices
-             QPieSlice *slice2 = series->slices().at(2);
-             //slice1->setExploded();
-             slice2->setLabelVisible();
-         }
-         // Create the chart widget
-         QChart *chart = new QChart();
-         // Add data to chart with title and hide legend
-         chart->addSeries(series); // widget
-         chart->setTitle("Produits par Prix :Nombre Des Produits "+ QString::number(total));
-         chart->legend()->hide();
-         // Used to display the chart
-         QChartView *chartView = new QChartView(chart);//creation de la fenetre de widget
-         chartView->setRenderHint(QPainter::Antialiasing);
-         chartView->resize(1000,500);
-         chartView->show();
+        QPieSeries *series = new QPieSeries();
+        series->append(a,age1);
+        series->append(b,age2);
+        series->append(c,age3);
+        if (age1!=0)
+        {QPieSlice *slice = series->slices().at(0);
+            slice->setLabelVisible();
+            slice->setPen(QPen());}
+        if ( age2!=0)
+        {
+            // Add label, explode and define brush for 2nd slice
+            QPieSlice *slice1 = series->slices().at(1);
+            //slice1->setExploded();
+            slice1->setLabelVisible();
+        }
+        if(age3!=0)
+        {
+            // Add labels to rest of slices
+            QPieSlice *slice2 = series->slices().at(2);
+            //slice1->setExploded();
+            slice2->setLabelVisible();
+        }
+        // Create the chart widget
+        QChart *chart = new QChart();
+        // Add data to chart with title and hide legend
+        chart->addSeries(series); // widget
+        chart->setTitle("STATISTIQUE DES EMPLOYEES SELON AGE  "+ QString::number(total));
+        chart->legend()->hide();
+        // Used to display the chart
+        QChartView *chartView = new QChartView(chart);//creation de la fenetre de widget
+        chartView->setRenderHint(QPainter::Antialiasing);
+        chartView->resize(1000,500);
+        chartView->show();
+
+
 }
-*/
+
 
 void MainWindow::on_pushButton_Login_clicked()
 {
         QString username = ui->lineEdit_username->text();
         QString password = ui->lineEdit_password->text();
 
-               if (username == "admin" && password == "admin") {
+               if (username == "aya" && password == "aya") {
                    QMessageBox::information(this, "Login", "Username and password are correct");
                 ui->stackedWidget->setCurrentIndex(1);
 
@@ -228,54 +222,25 @@ void MainWindow::on_pushButton_Reset_clicked()
            ui->tableView->setModel((E.afficherEmploye()));
 }
 
-void MainWindow::on_pushButton_statistique_clicked()
+
+void MainWindow::on_lineEdit_textEdited(const QString &arg1)
 {
-    //ui->stackedWidget_2->setCurrentIndex(1);
-        QSqlQueryModel * model= new QSqlQueryModel();
-        model->setQuery("select * from EMPLOYE where AGE < 18 ");
-        float salaire=model->rowCount();
-        model->setQuery("select * from EMPLOYE where AGE  between 18 and 50 ");
-        float salairee=model->rowCount();
-        model->setQuery("select * from EMPLOYE where AGE >50  ");
-        float salaireee=model->rowCount();
-        float total=salaire+salairee+salaireee;
+    employe E;
+    ui->tableView->setModel(E.recherche3(arg1));
+}
 
-        QString a=QString("moins de 50 ANS . "+QString::number((salaire*100)/total,'f',2)+"%" );
-        QString b=QString("entre 18 et 50 ANS.  "+QString::number((salairee*100)/total,'f',2)+"%" );
-        QString c=QString("plus de 50 ANS."+QString::number((salaireee*100)/total,'f',2)+"%" );
+void MainWindow::on_pushButton_chercher_clicked()
+{
+    E.setcin(ui->lineEdit_cin->text().toInt());
+    ui->tableView->setModel(E.rechercheEmploye(E.get_cin()));
+    ui->lineEdit_cin->clear();
+    ui->lineEdit_nom->clear();
+    ui->label_prenom->clear();
+    ui->lineEdit_age->clear();
+    ui->lineEdit_post->clear();
+    ui->lineEdit_email->clear();
+    ui->label_experience->clear();
 
-        QPieSeries *series = new QPieSeries();
-        series->append(a,salaire);
-        series->append(b,salairee);
-        series->append(c,salaireee);
-        if (salaire!=0)
-        {QPieSlice *slice = series->slices().at(0);
-            slice->setLabelVisible();
-            slice->setPen(QPen());}
-        if ( salairee!=0)
-        {
-            // Add label, explode and define brush for 2nd slice
-            QPieSlice *slice1 = series->slices().at(1);
-            //slice1->setExploded();
-            slice1->setLabelVisible();
-        }
-        if(salaireee!=0)
-        {
-            // Add labels to rest of slices
-            QPieSlice *slice2 = series->slices().at(2);
-            //slice1->setExploded();
-            slice2->setLabelVisible();
-        }
-        // Create the chart widget
-        QChart *chart = new QChart();
-        // Add data to chart with title and hide legend
-        chart->addSeries(series); // widget
-        chart->setTitle("STATISTIQUE DES EMPLOYEES SELON AGE  "+ QString::number(total));
-        chart->legend()->hide();
-        // Used to display the chart
-        QChartView *chartView = new QChartView(chart);//creation de la fenetre de widget
-        chartView->setRenderHint(QPainter::Antialiasing);
-        chartView->resize(1000,500);
-        chartView->show();
- }
 
+
+}
