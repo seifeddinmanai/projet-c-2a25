@@ -15,7 +15,5 @@ db.setPassword("wxcvbn123");//inserer mot de passe de cet utilisateur
 if (db.open())
 test=true;
 
-
-
     return  test;
 }

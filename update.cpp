@@ -50,9 +50,9 @@ void update::on_comboBox_modifier_2_currentIndexChanged(const QString &arg1)
       model->setQuery(*query);
 }
 
+
 void update::on_buttonBox_accepted()
 {
-
     Job e1;
     e1.setnom(ui->nom_modifier_2->text());
     e1.setprenom(ui->poste_modifier_3->text());
@@ -64,7 +64,9 @@ void update::on_buttonBox_accepted()
         bool test=e1.modifier(e1.getnom(),e1.getposte(),e1.getreference(),e1.getsalaire(),e1.getexperience(),e1.getniveau());
        if(test)
 
-       {    QMessageBox::information(nullptr, QObject::tr("modifier avec succes"),
+       {
+           e1.notification_modifier();
+           QMessageBox::information(nullptr, QObject::tr("modifier avec succes"),
                                       QObject::tr("update successful.\n"
                                                   "Click Cancel to exit."), QMessageBox::Cancel);
                   }
@@ -73,3 +75,6 @@ void update::on_buttonBox_accepted()
                                       QObject::tr("update failed.\n"
                                                   "Click Cancel to exit."), QMessageBox::Cancel);
 }
+
+
+

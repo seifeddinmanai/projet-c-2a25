@@ -4,6 +4,7 @@
 #include <QSqlQueryModel>
 #include <QSqlQuery>
 #include <QObject>
+#include <QSystemTrayIcon>
 
 
 
@@ -94,7 +95,19 @@ bool Job::modifier(QString nom,QString poste,int reference,int salaire,int exper
 }
 QSqlQueryModel *Job:: trier(){
     QSqlQueryModel *model=new QSqlQueryModel();
-    model->setQuery("select * from jobb  order by reference desc");
+    model->setQuery("select * from jobb  order by reference ASC");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("POSTE"));
+model->setHeaderData(2, Qt::Horizontal,QObject::tr("experience"));
+model->setHeaderData(3, Qt::Horizontal,QObject::tr("reference"));
+model->setHeaderData(4, Qt::Horizontal,QObject::tr("salaire"));
+model->setHeaderData(5, Qt::Horizontal,QObject::tr("niveau"));
+return  model ;
+
+}
+QSqlQueryModel *Job:: trier1(){
+    QSqlQueryModel *model=new QSqlQueryModel();
+    model->setQuery("select * from jobb  order by salaire desc");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("NOM"));
     model->setHeaderData(1, Qt::Horizontal,QObject::tr("POSTE"));
 model->setHeaderData(2, Qt::Horizontal,QObject::tr("experience"));
@@ -103,6 +116,18 @@ model->setHeaderData(4, Qt::Horizontal,QObject::tr("salaire"));
 model->setHeaderData(5, Qt::Horizontal,QObject::tr("niveau"));
 return  model ;
 }
+QSqlQueryModel *Job:: trier2(){
+    QSqlQueryModel *model=new QSqlQueryModel();
+    model->setQuery("select * from jobb  order by nom");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("POSTE"));
+model->setHeaderData(2, Qt::Horizontal,QObject::tr("experience"));
+model->setHeaderData(3, Qt::Horizontal,QObject::tr("reference"));
+model->setHeaderData(4, Qt::Horizontal,QObject::tr("salaire"));
+model->setHeaderData(5, Qt::Horizontal,QObject::tr("niveau"));
+return  model ;
+}
+
 
 QSqlQueryModel *Job::rechercher(QString nom){
     QSqlQueryModel *model=new QSqlQueryModel();
@@ -114,4 +139,45 @@ model->setHeaderData(3, Qt::Horizontal,QObject::tr("reference"));
 model->setHeaderData(4, Qt::Horizontal,QObject::tr("salaire"));
 model->setHeaderData(5, Qt::Horizontal,QObject::tr("niveau"));
 return  model ;
+}
+void Job::notification_ajoute()
+{
+
+    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
+
+   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
+    notifyIcon->show();
+    notifyIcon->showMessage("offre d'emploi ","nouveau offre ajouter ",QSystemTrayIcon::Information,15000);
+}
+
+void Job::notification_supprimer(){
+    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
+
+   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
+    notifyIcon->show();
+    notifyIcon->showMessage("offre d'emploi ","nouveau offre supprimer",QSystemTrayIcon::Information,15000);
+}
+
+
+void Job::notification_modifier(){
+    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
+
+   // notifyIcon->setIcon(QIcon(":/new/prefix1/MyResources/computer-icons-avatar-user-login-avatar.jpg"));
+    notifyIcon->show();
+    notifyIcon->showMessage("offre d'emploi ","nouveau offre modifier",QSystemTrayIcon::Information,15000);
+}
+
+
+QSqlQueryModel * Job::rechercher1(QString a)
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+    model->setQuery("SELECT * FROM jobb WHERE (NOM LIKE '%"+a+"%' OR POSTE LIKE '%"+a+"%' OR experience LIKE '%"+a+"%' OR reference LIKE '%"+a+"%' OR salaire LIKE '%"+a+"%' OR niveau LIKE '%"+a+"%' ) ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(1, Qt::Horizontal,QObject::tr("POSTE"));
+model->setHeaderData(2, Qt::Horizontal,QObject::tr("experience"));
+model->setHeaderData(3, Qt::Horizontal,QObject::tr("reference"));
+model->setHeaderData(4, Qt::Horizontal,QObject::tr("salaire"));
+model->setHeaderData(5, Qt::Horizontal,QObject::tr("niveau"));
+
+    return model;
 }

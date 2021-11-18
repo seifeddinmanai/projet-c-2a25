@@ -5,6 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+QT       += core gui multimedia multimediawidgets
+QT       +=widgets
+QT +=svg
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,17 +32,28 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
-    update.cpp
+    qrcode.cpp \
+    qrcodegeneratordemo.cpp \
+    qrcodegeneratorworker.cpp \
+    qrwidget.cpp \
+    update.cpp \
+    widget.cpp
 
 HEADERS += \
     job.h \
         mainwindow.h \
     connection.h \
-    update.h
+    qrcode.h \
+    qrwidget.h \
+    update.h \
+    widget.h
 
 FORMS += \
         mainwindow.ui \
-        update.ui
+        update.ui \
+        widget.ui
+
+QMAKE_CXXFLAGS += -std=gnu++14
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
