@@ -9,8 +9,8 @@ bool connection::ouvrirconnexion()
     bool test=false;
     QSqlDatabase db=QSqlDatabase::addDatabase("QODBC");
     db.setDatabaseName("test-db");
-    db.setUserName("nasreddine");//nom utilisateur
-    db.setPassword("nasreddine");//mot de passe utilisateur
+    db.setUserName("eya");//nom utilisateur
+    db.setPassword("0000");//mot de passe utilisateur
     if(db.open())
         test=true;
     else throw QString ("Erreur Paramétres"+test);

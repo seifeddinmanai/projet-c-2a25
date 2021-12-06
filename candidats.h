@@ -3,6 +3,7 @@
 #include <connection.h>
 #include <QSqlQueryModel>
 
+//
 class candidats
 {
 public:

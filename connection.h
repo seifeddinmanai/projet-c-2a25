@@ -8,6 +8,7 @@
 #include <QString>
 
 
+
 class connection
 {
 private:

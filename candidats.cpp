@@ -1,5 +1,6 @@
 #include "candidats.h"
 
+//
 candidats::candidats()//constucteur
 {
   cin="";

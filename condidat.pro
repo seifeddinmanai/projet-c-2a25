@@ -12,6 +12,7 @@ SOURCES += \
     candidats.cpp \
     connection.cpp \
     main.cpp \
+    main.cpp \
     mainwindow.cpp
 
 HEADERS += \
